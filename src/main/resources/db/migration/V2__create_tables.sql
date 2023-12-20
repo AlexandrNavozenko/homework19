@@ -3,8 +3,8 @@ create table if not exists users (
     email VARCHAR(128) NOT NULL CHECK (email like '%@%'),
     user_name VARCHAR(128) NOT NULL,
 
-    CONSTRAINT email_uq UNIQUE (email),
-    CONSTRAINT user_name_uq UNIQUE (user_name)
+    CONSTRAINT email_ak UNIQUE (email),
+    CONSTRAINT user_name_ak UNIQUE (user_name)
 );
 
 create table if not exists advisors (
@@ -23,7 +23,7 @@ create table if not exists applicants (
 
     CONSTRAINT applicants_pk PRIMARY KEY (user_id),
     CONSTRAINT applicants_user_id_fk FOREIGN KEY (user_id) REFERENCES users ON DELETE CASCADE,
-    CONSTRAINT social_security_number_uq UNIQUE (social_security_number)
+    CONSTRAINT social_security_number_ak UNIQUE (social_security_number)
 );
 
 create table if not exists addresses (
