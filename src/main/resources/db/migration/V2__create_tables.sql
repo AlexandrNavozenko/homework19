@@ -8,7 +8,7 @@ create table if not exists users (
 );
 
 create table if not exists advisors (
-    user_id INTEGER,
+    user_id INTEGER NOT NULL,
     role advisor_role_enum NOT NULL,
 
     CONSTRAINT advisors_pk PRIMARY KEY (user_id),
@@ -16,7 +16,7 @@ create table if not exists advisors (
 );
 
 create table if not exists applicants (
-    user_id INTEGER,
+    user_id INTEGER NOT NULL,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     social_security_number INTEGER NOT NULL,
